@@ -1,7 +1,25 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity ,Text, View } from 'react-native';
+import { StyleSheet, TouchableOpacity ,Text, View, Button } from 'react-native';
+import getQuote from './util/RandomQuoteApi';
 
-export default function App() {
+export default class App extends React.Component {
+
+  constructor() {
+    super();
+      this.state = {
+        loading: true,
+        quoteMeta: {},
+    }
+  }
+
+
+  async componentDidMount() {
+    this.setState({
+    quoteMeta: await getQuote(),
+    })
+  }
+
+  render() {
   return (
     <View style={styles.container}>
       <Text>MENU</Text>
@@ -12,8 +30,16 @@ export default function App() {
       Stil Bored? Click me
       </Text>
       </TouchableOpacity>
+
+      <Text style={styles.paragraph}>
+        See Kanye's quote of the day.
+      </Text>
+      <Button title="get quote" onPress={() => alert(this.state.quoteMeta.quote)}/>
+
     </View>
   );
+  }
+
 }
 
 const styles = StyleSheet.create({
