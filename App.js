@@ -27,7 +27,7 @@ export default class App extends React.Component {
       onPress = {() => alert('Joke time')}
       style = {{backgroundColor: ' '}}>
       <Text style = {{fontSize: 20, color: 'black'}}>
-      Stil Bored? Click me
+      About
       </Text>
       </TouchableOpacity>
 
