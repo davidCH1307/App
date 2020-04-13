@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity ,Text, View, Button } from 'react-native';
+import { StyleSheet,Text, View, Button } from 'react-native';
 import getQuote from './util/RandomQuoteApi';
+import Header from './components/header';
 
 export default class App extends React.Component {
-
+  
   constructor() {
     super();
       this.state = {
@@ -19,23 +20,13 @@ export default class App extends React.Component {
     })
   }
 
+  
   render() {
   return (
     <View style={styles.container}>
-      <Text>MENU</Text>
-      <TouchableOpacity 
-      onPress = {() => alert('Joke time')}
-      style = {{backgroundColor: ' '}}>
-      <Text style = {{fontSize: 20, color: 'black'}}>
-      Stil Bored? Click me
-      </Text>
-      </TouchableOpacity>
-
-      <Text style={styles.paragraph}>
-        See Kanye's quote of the day.
-      </Text>
-      <Button title="get quote" onPress={() => alert(this.state.quoteMeta.quote)}/>
-
+       <Header />
+      <Button title="See Kanye's quote of the day." onPress={() => alert(this.state.quoteMeta.quote)}/>
+      <Button title = "About" onPress = {() => alert ("David, Matt, Nikolas, Justin ")}/>
     </View>
   );
   }
@@ -45,8 +36,6 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'beige',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#FFEE58',
   },
 });
