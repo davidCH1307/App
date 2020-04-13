@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet,Text, View, Button } from 'react-native';
 import getQuote from './util/RandomQuoteApi';
 import Header from './components/header';
+import NewScreen from './components/NewScreen';
 
 export default class App extends React.Component {
   
@@ -26,6 +27,7 @@ export default class App extends React.Component {
     <View style={styles.container}>
        <Header />
       <Button title="See Kanye's quote of the day." onPress={() => alert(this.state.quoteMeta.quote)}/>
+      <Button title = 'New Screen' onPress = {() => NewScreen}/>
       <Button title = "About" onPress = {() => alert ("David, Matt, Nikolas, Justin ")}/>
     </View>
   );
