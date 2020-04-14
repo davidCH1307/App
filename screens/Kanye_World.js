@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'beige',
-    backgroundImage: 'url(http://wallpapercave.com/wp/cMFsvT9.png)',
-    backgroundSize: 'cover'
+   // backgroundImage: 'url(http://wallpapercave.com/wp/cMFsvT9.png)',
+    //backgroundSize: 'cover'
   },
   TitleText:{
     textAlign: 'center',
