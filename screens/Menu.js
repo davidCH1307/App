@@ -10,11 +10,15 @@ export default function NEWSCREEN({ navigation }){
     const pressHandler2 = () => {
         navigation.navigate('NewScreen');
     }
+    const pressHandler3 = () => {
+        navigation.navigate('Stay_On_Task');
+    }
 
     return (
         <View style = {styles.container}>
             <Text style = {styles.writings}>Welcome to the Quarantine App</Text>
             <Button title = 'Welcome to Kanye World ' onPress = {pressHandler}/>
+            <Button title = 'Stay On Task' onPress = {pressHandler3}/>
             <Button title = 'New Page ' onPress = {pressHandler2}/>
             <Button title = "About" onPress = {() => alert ("This app was made by:                               David, Matt, Nikolas, Justin ")}/>
         </View>
