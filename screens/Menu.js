@@ -1,0 +1,35 @@
+import React from 'react';
+import { StyleSheet,Text, View, Button } from 'react-native';
+
+export default function NEWSCREEN({ navigation }){
+
+    const pressHandler = () => {
+        navigation.navigate('Kanye_World');
+    }
+
+    const pressHandler2 = () => {
+        navigation.navigate('NewScreen');
+    }
+
+    return (
+        <View style = {styles.container}>
+            <Text style = {styles.writings}>Welcome to the Quarantine App</Text>
+            <Button title = 'Welcome to Kanye World ' onPress = {pressHandler}/>
+            <Button title = 'New Page ' onPress = {pressHandler2}/>
+            <Button title = "About" onPress = {() => alert ("This app was made by:                               David, Matt, Nikolas, Justin ")}/>
+        </View>
+    )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 40,
+        backgroundColor: 'beige',
+    },
+    writings: {
+        textAlign: 'center',
+        fontSize: 20,
+        fontWeight: 'bold',
+    }
+});

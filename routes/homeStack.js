@@ -1,15 +1,19 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
-import Quarantine_Time from '../screens/Quarantine_Time';
+import Kanye_World from '../screens/Kanye_World';
+import Menu from '../screens/Menu';
 import NewScreen from '../screens/NewScreen';
 
 const screens = {
-    Quarantine_Time: {
-        screen: Quarantine_Time
+    Menu: {
+        screen: Menu
+    },
+    Kanye_World: {
+        screen: Kanye_World
     },
     NewScreen: {
         screen: NewScreen
-    },
+    }
 }
 
 const HomeStack = createStackNavigator(screens);
