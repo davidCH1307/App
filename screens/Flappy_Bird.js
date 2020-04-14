@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 40,
         backgroundColor: 'beige',
-        backgroundImage:`url(https://www.desktopbackground.org/download/2304x864/2014/07/26/799254_flappy-generator-plus-create-your-own-flappy-bird-game_9600x950_h.png)` 
+        //backgroundImage:`url(https://www.desktopbackground.org/download/2304x864/2014/07/26/799254_flappy-generator-plus-create-your-own-flappy-bird-game_9600x950_h.png)` 
     },
     Item2:{
         textAlign: 'center',
