@@ -12,18 +12,20 @@ export default class Quarantine_Time extends React.Component{
     }
   }
 
-
-  async componentDidMount() {
+  async handleClick() {
     this.setState({
-    quoteMeta: await getQuote(),
+      quoteMeta: await getQuote(),
     })
   }
- 
-  
+
   render() {
   return (
     <View style={styles.container}>
-      <Button title="See Kanye's quote of the day." onPress={() => alert(this.state.quoteMeta.quote)}/>
+      <Text style = {styles.TitleText}>Welcome to Kanye's World</Text>
+      <Button title="Get a random quote from Kanye" onPress={this.handleClick.bind(this)}/>
+      <Text style={styles.QuoteText}>
+      {this.state.quoteMeta.quote}
+      </Text>
     </View>
   );
   }
@@ -34,5 +36,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'beige',
+    backgroundImage: 'url(http://wallpapercave.com/wp/cMFsvT9.png)',
+    backgroundSize: 'cover'
   },
+  TitleText:{
+    textAlign: 'center',
+    fontSize: 36,
+  },
+
+  QuoteText:{
+    textAlign: 'center',
+    fontSize: 36,
+    borderRadius: 20
+  }
 });
