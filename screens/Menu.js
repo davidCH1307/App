@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet,Text, View, Button } from 'react-native';
+import { StyleSheet,Text, View, Button, Image } from 'react-native';
 
 export default function NEWSCREEN({ navigation }){
 
@@ -19,7 +19,7 @@ export default function NEWSCREEN({ navigation }){
         navigation.navigate('Flappy_Bird');
     }
     const pressHandler5 = () => {
-        navigation.navigate('Review')
+        navigation.navigate('Reviews')
     }
 
     return (

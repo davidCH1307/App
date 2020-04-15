@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet,Text, View, Button } from 'react-native';
 
-export default function ReviewPage(){
+export default function Reviews(){
     return (
         <View style = {styles.container}>
             <Text style = {styles.Item2}>Page is being worked on, Review app will be here shortly</Text>

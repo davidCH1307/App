@@ -5,26 +5,26 @@ import Menu from '../screens/Menu';
 import NewScreen from '../screens/NewScreen';
 import Stay_On_Task from '../screens/Stay_On_Task';
 import Flappy_Bird from '../screens/Flappy_Bird'
-import ReviewPage from '../screens/reviews';
+import Reviews from '../screens/reviews';
 
 const screens = {
     Menu: {
         screen: Menu
     },
-    Kanye_World: {
-        screen: Kanye_World
-    },
     Stay_On_Task: {
         screen: Stay_On_Task
     },
-    ReviewPage: {
-        screen: ReviewPage
+    Reviews: {
+        screen: Reviews
     },
     NewScreen: {
         screen: NewScreen
     },
     Flappy_Bird: {
         screen: Flappy_Bird
+    },
+    Kanye_World: {
+        screen: Kanye_World
     },
 }
 
