@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet,Text, View, Button, Image } from 'react-native';
+import { StyleSheet,Text, View, Button, ImageBackground} from 'react-native';
 
 export default function NEWSCREEN({ navigation }){
 
@@ -23,7 +23,7 @@ export default function NEWSCREEN({ navigation }){
     }
 
     return (
-        <View style = {styles.container}>
+        <ImageBackground source = {require('../assets/475797_preview.png')} style = {styles.container}>
             <Text style = {styles.writings}>Welcome to the Quarantine App</Text>
             <Button title = 'Stay On Task' onPress = {pressHandler3}/>
             <Button title = 'Review' onPress = {pressHandler5}/>
@@ -31,7 +31,7 @@ export default function NEWSCREEN({ navigation }){
             <Button title = 'Flappy Bird' onPress = {pressHandler4}/>
             <Button title = 'Welcome to Kanye World ' onPress = {pressHandler}/>
             <Button title = "About" onPress = {() => alert ("This app was made by:                               David, Matt, Nikolas, Justin ")}/>
-        </View>
+        </ImageBackground>
     )
 }
 
