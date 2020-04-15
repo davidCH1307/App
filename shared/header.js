@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',
-        borderRadius: 10,
     },
     headerText: {
         fontWeight: 'bold',
