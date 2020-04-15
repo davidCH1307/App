@@ -39,11 +39,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 40,
-        backgroundColor: 'beige',
     },
     writings: {
         textAlign: 'center',
         fontSize: 20,
         fontWeight: 'bold',
+        color: 'skyblue',
     }
 });
