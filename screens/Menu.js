@@ -23,7 +23,7 @@ export default function NEWSCREEN({ navigation }){
     }
 
     return (
-        <ImageBackground source = {require('../assets/475797_preview.png')} style = {styles.container}>
+        <ImageBackground source = {require('../assets/blue.jpg')} style = {styles.container}>
             <Text style = {styles.writings}>Welcome to the Quarantine App</Text>
             <Button title = 'Stay On Task' onPress = {pressHandler3}/>
             <Button title = 'Review' onPress = {pressHandler5}/>
