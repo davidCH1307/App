@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 10,
         paddingBottom: 35,
-        paddingTop: 10,
+        paddingTop: 0,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',

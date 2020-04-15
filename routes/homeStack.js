@@ -13,9 +13,9 @@ import Reviews from '../screens/reviews';
 const screens = {
     Menu: {
         screen: Menu,
-        navigationOptions: {
-            headerTitle: () => <Header />,
-        },
+        // navigationOptions: {
+        //     //headerTitle: () => <Header />,
+        // },
     },
     Stay_On_Task: {
         screen: Stay_On_Task
