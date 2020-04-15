@@ -18,14 +18,18 @@ export default function NEWSCREEN({ navigation }){
     const pressHandler4 = () => {
         navigation.navigate('Flappy_Bird');
     }
+    const pressHandler5 = () => {
+        navigation.navigate('Review')
+    }
 
     return (
         <View style = {styles.container}>
             <Text style = {styles.writings}>Welcome to the Quarantine App</Text>
-            <Button title = 'Welcome to Kanye World ' onPress = {pressHandler}/>
             <Button title = 'Stay On Task' onPress = {pressHandler3}/>
+            <Button title = 'Review' onPress = {pressHandler5}/>
             <Button title = 'New Page ' onPress = {pressHandler2}/>
             <Button title = 'Flappy Bird' onPress = {pressHandler4}/>
+            <Button title = 'Welcome to Kanye World ' onPress = {pressHandler}/>
             <Button title = "About" onPress = {() => alert ("This app was made by:                               David, Matt, Nikolas, Justin ")}/>
         </View>
     )
