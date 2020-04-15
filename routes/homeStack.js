@@ -1,5 +1,8 @@
+import React from 'react';
+import {StyleSheet} from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
+import Header from '../shared/header';
 import Kanye_World from '../screens/Kanye_World';
 import Menu from '../screens/Menu';
 import NewScreen from '../screens/NewScreen';
@@ -9,7 +12,10 @@ import Reviews from '../screens/reviews';
 
 const screens = {
     Menu: {
-        screen: Menu
+        screen: Menu,
+        navigationOptions: {
+            headerTitle: () => <Header />,
+        },
     },
     Stay_On_Task: {
         screen: Stay_On_Task
