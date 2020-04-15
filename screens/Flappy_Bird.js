@@ -5,7 +5,7 @@ import { BorderlessButton } from 'react-native-gesture-handler';
 export default function Flappy(){
     return (
         <ImageBackground source= {require('../assets/Flappy.png')} style = {styles.container}>
-            <Text style = {styles.Item2}>Flappy Bird</Text>
+            <Text style = {styles.Item2}>Flappy Bird Game Coming Soon</Text>
         </ImageBackground>
     )
 }
@@ -18,6 +18,6 @@ const styles = StyleSheet.create({
     },
     Item2:{
         textAlign: 'center',
-        fontSize: 36,
+        fontSize: 20,
     }
 });
