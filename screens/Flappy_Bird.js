@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet,Text, View, Button, } from 'react-native';
+import { StyleSheet,Text, View, Button,ImageBackground } from 'react-native';
 import { BorderlessButton } from 'react-native-gesture-handler';
 
 export default function Flappy(){
     return (
-        <View style = {styles.container}>
+        <ImageBackground source= {require('../assets/Flappy.png')} style = {styles.container}>
             <Text style = {styles.Item2}>Flappy Bird</Text>
-        </View>
+        </ImageBackground>
     )
 }
 const styles = StyleSheet.create({
