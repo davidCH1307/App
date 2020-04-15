@@ -37,7 +37,7 @@ export default function App() {
       Keyboard.dismiss();
       console.log('dismissed keyboard');
     }}>
-      <ImageBackground source = {require('../assets/notebook.png')} style={styles.container}>
+      <ImageBackground source = {require('../assets/notes.png')} style={styles.container}>
         <View style = {styles.content}>
           <AddTodo submitHandler = {submitHandler} />
           <View style = {styles.list}>
