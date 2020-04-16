@@ -6,8 +6,7 @@ import Kanye_World from '../screens/Kanye_World';
 import Menu from '../screens/Menu';
 import NewScreen from '../screens/NewScreen';
 import Stay_On_Task from '../screens/Stay_On_Task';
-import Flappy_Bona from '../screens/Flappy_Bona'
-import Reviews from '../screens/reviews';
+import Flappy_Bona from '../screens/Flappy_Bona';
 
 const screens = {
     Menu: {
@@ -15,9 +14,6 @@ const screens = {
     },
     Stay_On_Task: {
         screen: Stay_On_Task
-    },
-    Reviews: {
-        screen: Reviews
     },
     NewScreen: {
         screen: NewScreen

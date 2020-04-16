@@ -8,9 +8,13 @@ import Wall from '../components/Wall';
 import Physics from '../components/Physics';
 
 
+
+
 export const randomBetween = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min); 
 }
+
+
 
 export const generatePipes = () => {
     let topPipeHeight = randomBetween(100, (Constants.MAX_HEIGHT/2) -100);
@@ -33,7 +37,7 @@ export default class Flappy extends Component{
         this.entities = this.setupWorld();
 
         this.state = {
-            running: true
+            running: true,
         }
 
     }
@@ -41,6 +45,7 @@ export default class Flappy extends Component{
     setupWorld = () => {
         let engine = Matter.Engine.create({ enableSleeping: false });
         let world = engine.world;
+        world.gravity.y = 0.0;
 
         let bird = Matter.Bodies.rectangle(Constants.MAX_WIDTH / 4, Constants.MAX_HEIGHT/ 2, 50,50);
         let floor = Matter.Bodies.rectangle(Constants.MAX_WIDTH /2, Constants.MAX_HEIGHT -110, Constants.MAX_WIDTH, 50, { isStatic: true });
@@ -84,9 +89,11 @@ export default class Flappy extends Component{
     }
 
     reset = () => {
+        resetPipes();
         this.gameEngine.swap(this.setupWorld());
         this.setState({
-            running: true
+            running: true,
+            score: 0
         });
     }
  
