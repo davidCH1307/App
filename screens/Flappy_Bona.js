@@ -88,14 +88,6 @@ export default class Flappy extends Component{
         }
     }
 
-    reset = () => {
-        resetPipes();
-        this.gameEngine.swap(this.setupWorld());
-        this.setState({
-            running: true,
-            score: 0
-        });
-    }
  
     render (){
         return (
@@ -113,6 +105,7 @@ export default class Flappy extends Component{
                     <TouchableOpacity onPress={this.reset} style={styles.fullScreenButton}>
                         <View style = {styles.fulLScreen}>
                             <Text style = {styles.gameOverText}> Game Over </Text>
+                            <Text style = {styles.gameOverSubText}> Try Again </Text>
                         </View>
                     </TouchableOpacity>}
             </ImageBackground>
@@ -154,6 +147,10 @@ const styles = StyleSheet.create({
     gameOverText:{
         color: 'white',
         fontSize: 48,
+    },
+    gameOverSubText:{
+        color: 'white',
+        fontSize: 24,
     }
 });
 
