@@ -66,12 +66,12 @@ export default class Flappy extends Component{
         return {
             physics: {engine: engine, world: world },
             bird: {body: bird, size: [50, 50], color: 'brown', renderer: Bird },
-            floor: {body: floor, size: [Constants.MAX_WIDTH, 50], color: 'green', renderer: Wall },
-            ceiling: {body: ceiling, size: [Constants.MAX_WIDTH, 50], color: 'green', renderer: Wall },
-            pipe1: {body: pipe1, size: [Constants.PIPE_WIDTH, pipe1Height], color: 'green', renderer: Wall },
-            pipe2: {body: pipe2, size: [Constants.PIPE_WIDTH, pipe2Height], color: 'green', renderer: Wall },
-            pipe3: {body: pipe3, size: [Constants.PIPE_WIDTH, pipe3Height], color: 'green', renderer: Wall },
-            pipe4: {body: pipe4, size: [Constants.PIPE_WIDTH, pipe4Height], color: 'green', renderer: Wall },
+            floor: {body: floor, size: [Constants.MAX_WIDTH, 50], color: 'brown', renderer: Wall },
+            ceiling: {body: ceiling, size: [Constants.MAX_WIDTH, 50], color: 'brown', renderer: Wall },
+            pipe1: {body: pipe1, size: [Constants.PIPE_WIDTH, pipe1Height], color: 'brown', renderer: Wall },
+            pipe2: {body: pipe2, size: [Constants.PIPE_WIDTH, pipe2Height], color: 'brown', renderer: Wall },
+            pipe3: {body: pipe3, size: [Constants.PIPE_WIDTH, pipe3Height], color: 'brown', renderer: Wall },
+            pipe4: {body: pipe4, size: [Constants.PIPE_WIDTH, pipe4Height], color: 'brown', renderer: Wall },
         }
     } 
 
@@ -92,7 +92,7 @@ export default class Flappy extends Component{
  
     render (){
         return (
-            <View style = {styles.container}>
+            <ImageBackground source = {(require('../assets/Bonaventurebasketball.jpg'))} style = {styles.container}>
                 <GameEngine
                     ref = {(ref) => {this.gameEngine = ref; }}
                     style = {styles.gameContainer}
@@ -108,7 +108,7 @@ export default class Flappy extends Component{
                             <Text style = {styles.gameOverText}> Game Over </Text>
                         </View>
                     </TouchableOpacity>}
-            </View>
+            </ImageBackground>
         )
     }
 };
