@@ -99,9 +99,9 @@ export default class Flappy extends Component{
                     entities = {this.entities} >
                         <StatusBar hidden = {true} />
                     </GameEngine>
-                    {!this.state.running && <TouchableOpacity onPress = {this.reset}>
+                    {!this.state.running && <TouchableOpacity onPress = {this.reset} style = {styles.fullScreenButton}>
                         <View style = {styles.fulLScreen}>
-                            <Text style = {styles.gameOverText}>Game Over</Text>
+                            <Text style = {styles.gameOver}> Game Over </Text>
                         </View>
                     </TouchableOpacity>}
                     
@@ -123,6 +123,14 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
     },
+    fullScreenButton: {
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        flex: 1, 
+    },
     fulLScreen:{
         position: 'absolute',
         top: 0,
@@ -134,7 +142,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    gameOverText:{
+    gameOver:{
         color: 'white',
         fontSize: 48,
     }
