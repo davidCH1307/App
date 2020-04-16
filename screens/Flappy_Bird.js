@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet,Text, View,StatusBar,Alert, Button, ImageBackground, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View,StatusBar, Alert, Button, ImageBackground, TouchableOpacity } from 'react-native';
 import Constants from '../components/Constants';
 import { GameEngine } from 'react-native-game-engine';
 import Matter from 'matter-js';
