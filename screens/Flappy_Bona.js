@@ -66,12 +66,12 @@ export default class Flappy extends Component{
         return {
             physics: {engine: engine, world: world },
             bird: {body: bird, size: [50, 50], color: 'brown', renderer: Bird },
-            floor: {body: floor, size: [Constants.MAX_WIDTH, 50], color: 'brown', renderer: Wall },
-            ceiling: {body: ceiling, size: [Constants.MAX_WIDTH, 50], color: 'brown', renderer: Wall },
-            pipe1: {body: pipe1, size: [Constants.PIPE_WIDTH, pipe1Height], color: 'brown', renderer: Wall },
-            pipe2: {body: pipe2, size: [Constants.PIPE_WIDTH, pipe2Height], color: 'brown', renderer: Wall },
-            pipe3: {body: pipe3, size: [Constants.PIPE_WIDTH, pipe3Height], color: 'brown', renderer: Wall },
-            pipe4: {body: pipe4, size: [Constants.PIPE_WIDTH, pipe4Height], color: 'brown', renderer: Wall },
+            floor: {body: floor, size: [Constants.MAX_WIDTH, 50], color: '#6D4C41', renderer: Wall },
+            ceiling: {body: ceiling, size: [Constants.MAX_WIDTH, 50], color: '#6D4C41', renderer: Wall },
+            pipe1: {body: pipe1, size: [Constants.PIPE_WIDTH, pipe1Height], color: '#6D4C41', renderer: Wall },
+            pipe2: {body: pipe2, size: [Constants.PIPE_WIDTH, pipe2Height], color: '#6D4C41', renderer: Wall },
+            pipe3: {body: pipe3, size: [Constants.PIPE_WIDTH, pipe3Height], color: '#6D4C41', renderer: Wall },
+            pipe4: {body: pipe4, size: [Constants.PIPE_WIDTH, pipe4Height], color: '#6D4C41', renderer: Wall },
         }
     } 
 
