@@ -31,6 +31,11 @@ export default class Flappy extends Component{
         super (props);
         this.gameEngine = null;
         this.entities = this.setupWorld();
+
+        this.state = {
+            running: true
+        }
+
     }
 
     setupWorld = () => {
@@ -52,6 +57,12 @@ export default class Flappy extends Component{
 
         Matter.World.add(world, [bird, floor, ceiling, pipe1, pipe2, pipe3, pipe4]);
 
+        Matter.Events.on(engine, "collisionStart", (event) => {
+            let pairs = event.pairs;
+
+            this.gameEngine.dispatch({ type: "game-over"});
+        });
+
         return {
             physics: {engine: engine, world: world },
             bird: {body: bird, size: [50, 50], color: 'brown', renderer: Bird },
@@ -64,6 +75,18 @@ export default class Flappy extends Component{
         }
     } 
 
+    onEvent = (e) => {
+        if (e.type === "game-over"){
+            this.setState({
+                running: false
+            })
+        }
+    }
+
+    reset = () => {
+
+    }
+ 
     render (){
         return (
             <View style = {styles.container}>
@@ -71,7 +94,18 @@ export default class Flappy extends Component{
                     ref = {(ref) => {this.gameEngine = ref; }}
                     style = {styles.gameContainer}
                     systems = {[Physics]}
-                    entities = {this.entities} />
+                    running = {this.state.running}
+                    onEvent = {this.onEvent}
+                    entities = {this.entities} >
+                        <StatusBar hidden = {true} />
+                    </GameEngine>
+                    {!this.state.running && <TouchableOpacity onPress = {this.reset}>
+                        <View style = {styles.fulLScreen}>
+                            <Text style = {styles.gameOverText}>Game Over</Text>
+                        </View>
+                    </TouchableOpacity>}
+                    
+                }
             </View>
         )
     }
@@ -81,6 +115,28 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
+    }, 
+    gameContainer: {
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+    },
+    fulLScreen:{
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        backgroundColor: 'black',
+        opacity: 0.0,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    gameOverText:{
+        color: 'white',
+        fontSize: 48,
     }
 });
 
