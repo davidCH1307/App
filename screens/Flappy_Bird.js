@@ -104,8 +104,6 @@ export default class Flappy extends Component{
                             <Text style = {styles.gameOver}> Game Over </Text>
                         </View>
                     </TouchableOpacity>}
-                    
-                }
             </View>
         )
     }
