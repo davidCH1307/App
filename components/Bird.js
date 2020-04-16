@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, ImageBackground} from 'react-native';
 
 export default class Bird extends Component {
     render(){
@@ -9,7 +9,7 @@ export default class Bird extends Component {
         const y = this.props.body.position.y - height / 2;
 
         return (
-            <View
+            <ImageBackground source = {require('../assets/Bona.png')}
                 style = {{
                     position: 'absolute',
                     top: y,
