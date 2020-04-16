@@ -30,7 +30,7 @@ export default function NEWSCREEN({ navigation }){
             <Button title = 'New Page ' onPress = {pressHandler2}/>
             <Button title = 'Flappy Bona' onPress = {pressHandler4}/>
             <Button title = 'Welcome to Kanye World ' onPress = {pressHandler}/>
-            <Button title = "About" onPress = {() => alert ("This app was made by:                               David, Matt, Nikolas, Justin ")}/>
+            <Button title = "About" onPress = {() => alert ("This app was made by:                               David, Matt, Nikolas")}/>
         </ImageBackground>
     )
 }
