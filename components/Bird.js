@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Image} from 'react-native';
-import Images from '../img/Images';
+import { View, ImageBackground ,Image} from 'react-native';
+
 
 export default class Bird extends Component {
     render(){
@@ -9,11 +9,10 @@ export default class Bird extends Component {
         const x = this.props.body.position.x - width / 2;
         const y = this.props.body.position.y - height / 2;
 
-        let image = Images['bird1' + this.props.pose];
         
 
         return (
-            <Image
+            <ImageBackground source = {require('../assets/bird1.png')}
                 style = {{
                     position: 'absolute',
                     top: y,
@@ -21,8 +20,7 @@ export default class Bird extends Component {
                     width: width, 
                     height: height,
                 }} 
-                resizeMode = 'stretch'
-                source = {image}/>
+                />
         )
     }
 }
