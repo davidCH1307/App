@@ -48,7 +48,7 @@ export default class Flappy extends Component{
         let world = engine.world;
         world.gravity.y = 0.0;
 
-        let bird = Matter.Bodies.rectangle(Constants.MAX_WIDTH / 4, Constants.MAX_HEIGHT/ 2, 50,50);
+        let bird = Matter.Bodies.rectangle(Constants.MAX_WIDTH / 2, Constants.MAX_HEIGHT/ 2, Constants.BIRD_WIDTH,Constants.BRID_HEIGHT);
             let floor1 = Matter.Bodies.rectangle(
                 Constants.MAX_WIDTH /2, 
                 Constants.MAX_HEIGHT -110, 

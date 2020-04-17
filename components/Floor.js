@@ -18,7 +18,7 @@ export default class Floor extends Component {
                     left: x,
                     width: width, 
                     height: height,
-                    overflow: hidden, 
+                    overflow: 'hidden', 
                     flexDirection: 'row',
                 }}>
                 {Array.apply(null, Array(imageIterations)).map(( el, idx) => {
