@@ -4,7 +4,7 @@ import Constants from '../components/Constants';
 import { GameEngine } from 'react-native-game-engine';
 import Matter from 'matter-js';
 import Bird from '../components/Bird';
-import Wall from '../components/Wall';
+import Pipe from '../components/Pipe';
 import Floor from '../components/Floor';
 import Physics from '../components/Physics';
 
