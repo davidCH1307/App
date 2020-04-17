@@ -21,6 +21,7 @@ export default class Flappy extends Component{
 
         this.state = {
             running: true,
+            score: 0,
         }
 
     }
@@ -33,7 +34,7 @@ export default class Flappy extends Component{
         let bird = Matter.Bodies.rectangle(Constants.MAX_WIDTH / 2, Constants.MAX_HEIGHT/ 2, Constants.BIRD_WIDTH,Constants.BRID_HEIGHT);
             let floor1 = Matter.Bodies.rectangle(
                 Constants.MAX_WIDTH /2, 
-                Constants.MAX_HEIGHT -110, 
+                Constants.MAX_HEIGHT - 110, 
                 Constants.MAX_WIDTH + 4, 
                 50, 
                 { isStatic: true }
@@ -49,7 +50,7 @@ export default class Flappy extends Component{
     
         Matter.World.add(world, [bird, floor1, floor2]);
         Matter.Events.on(engine, "collisionStart", (event) => {
-            let pairs = event.pairs;
+            var pairs = event.pairs;
 
             this.gameEngine.dispatch({ type: "game-over"});
         });
@@ -94,6 +95,7 @@ export default class Flappy extends Component{
                     {!this.state.running &&
                     <TouchableOpacity onPress={this.reset} style={styles.fullScreenButton}>
                         <View style = {styles.fulLScreen}>
+                            <Text style = {styles.scoreCounter}>{this.state.score}</Text>
                             <Text style = {styles.gameOverText}> Game Over </Text>
                             <Text style = {styles.gameOverSubText}> Try Again </Text>
                         </View>
@@ -141,7 +143,17 @@ const styles = StyleSheet.create({
     gameOverSubText:{
         color: 'white',
         fontSize: 24,
-    }
+    },
+    scoreCounter: {
+        color: 'white',
+        fontSize: 72,
+        position: 'absolute',
+        top: 50,
+        left: Constants.MAX_WIDTH /2 - 24,
+        textShadowColor: '#222222',
+        textShadowOffset: {width: 2, height: 2},
+        textShadowRadius: 2,
+    },
 });
 
 

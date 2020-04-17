@@ -13,12 +13,12 @@ export const randomBetween = (min, max) => {
 
 
 export const generatePipes = () => {
-    let topPipeHeight = randomBetween(100, (Constants.MAX_HEIGHT/2) -100);
+    let topPipeHeight = randomBetween(110, (Constants.MAX_HEIGHT/2) -110);
     let bottomPipeHeight = Constants.MAX_HEIGHT - topPipeHeight - Constants.GAP_SIZE;
 
     let sizes = [topPipeHeight, bottomPipeHeight];
 
-    if (Math.random() <0.5){
+    if (Math.random() <0.05){
         sizes = sizes.reverse();
     }
 
@@ -29,14 +29,14 @@ export const generatePipes = () => {
 export const addPipesAtLocation = (x, world, entities) => {
     let [pipe1Height, pipe2Height] = generatePipes();
 
-    let pipeTopWidth = Constants.PIPE_WIDTH + 20;
-    let pipeTopHeight = (pipeTopWidth / 205) * 95; 
+    let pipeTopWidth = Constants.PIPE_WIDTH + 15;
+    let pipeTopHeight = (pipeTopWidth / 205) * 110; 
 
     pipe1Height = pipe1Height - pipeTopHeight;
 
     let pipe1Top = Matter.Bodies.rectangle(
         x, 
-        pipe1Height + (pipeTopHeight /2),
+        pipe1Height + (pipeTopHeight / 2),
         pipeTopWidth,
         pipeTopHeight,
         {isStatic: true}
@@ -44,7 +44,7 @@ export const addPipesAtLocation = (x, world, entities) => {
 
     let pipe1 = Matter.Bodies.rectangle(
         x,
-        pipe1Height/2,
+        pipe1Height/ 2,
         Constants.PIPE_WIDTH,
         pipe1Height,
         { isStatic: true}
@@ -62,7 +62,7 @@ export const addPipesAtLocation = (x, world, entities) => {
 
     let pipe2 = Matter.Bodies.rectangle(
         x,
-        Constants.MAX_HEIGHT - 45 - (pipe1Height/2),
+        Constants.MAX_HEIGHT - 110 - (pipe1Height / 2),
         Constants.PIPE_WIDTH,
         pipe2Height,
         { isStatic: true}
@@ -99,13 +99,13 @@ const Physics = (entities, {touches, time}) => {
             if(world.gravity.y === 0.0){
                 world.gravity.y = 1.2;
 
-                addPipesAtLocation(Constants.MAX_WIDTH-100, world, entities);
+                addPipesAtLocation(Constants.MAX_WIDTH-110, world, entities);
 
             }
             hadTouches = true;
             Matter.Body.setVelocity( bird, {
                  x: bird.velocity.x,
-                  y: -8.5
+                  y: -10
                 });
         }
     });

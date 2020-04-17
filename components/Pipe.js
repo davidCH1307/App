@@ -17,7 +17,7 @@ export default class Pipe extends Component {
         return (
             <View
                 style = {{
-                    position: 'absolute',
+                    position: "absolute",
                     top: y,
                     left: x,
                     width: width, 
@@ -26,7 +26,8 @@ export default class Pipe extends Component {
                     flexDirection: 'column',
                 }}>
                 {Array.apply(null, Array(pipeIterations)).map(( el, idx) => {
-                    return <Image style = {{ width: width, height: height}} key = {idx} resizeMethod = "auto" source = {Images.pipe1} />
+                    return <Image style = {{ width: width, height: height}} key = {idx} resizeMode = "stretch"
+                     source = {Images.pipe1} />
                 })}
                 </View>
         )
