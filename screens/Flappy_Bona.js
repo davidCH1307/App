@@ -74,7 +74,7 @@ export default class Flappy extends Component{
 
         return {
             physics: {engine: engine, world: world },
-            bird: {body: bird, size: [50, 50], color: 'brown', renderer: Bird },
+            bird: {body: bird, pose: 1, renderer: Bird },
             floor1: {body: floor1, renderer: Floor },
             floor2: {body: floor2, renderer: Floor },
             
