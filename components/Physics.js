@@ -3,8 +3,9 @@ import Constants from './Constants';
 import Pipe from './Pipe';
 import PipeTop from './PipeTop';
 
+let tick = 0;
+let pose = 1;
 let pipes = 0;
-
 
 export const randomBetween = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min); 
@@ -17,7 +18,7 @@ export const resetPipes = () => {
 
 export const generatePipes = () => {
     let topPipeHeight = randomBetween(100, (Constants.MAX_HEIGHT/2) -100);
-    let bottomPipeHeight = Constants.MAX_HEIGHT - topPipeHeight - Constants.GAP_SIZE - 50;
+    let bottomPipeHeight = Constants.MAX_HEIGHT - topPipeHeight - Constants.GAP_SIZE;
 
     let sizes = [topPipeHeight, bottomPipeHeight];
 
@@ -65,7 +66,7 @@ export const addPipesAtLocation = (x, world, entities) => {
 
     let pipe2 = Matter.Bodies.rectangle(
         x,
-        Constants.MAX_HEIGHT - (pipe2Height / 2) - 50,
+        Constants.MAX_HEIGHT - 50 -(pipe2Height / 2),
         Constants.PIPE_WIDTH,
         pipe2Height,
         { isStatic: true}
@@ -98,13 +99,13 @@ const Physics = (entities, {touches, time, dispatch}) => {
     let bird = entities.bird.body;
 
     let hadTouches = false;
-    touches.filter(t => t.type === 'press' ).forEach(t => {
+    touches.filter(t => t.type === "press" ).forEach(t => {
         if (!hadTouches){
             if(world.gravity.y === 0.0){
                 world.gravity.y = 1.2;
 
-                addPipesAtLocation((Constants.MAX_WIDTH * 2) - (Constants.PIPE_WIDTH / 2) , world, entities)
-                addPipesAtLocation((Constants.MAX_WIDTH * 3) - (Constants.PIPE_WIDTH / 2), world, entities)
+                addPipesAtLocation((Constants.MAX_WIDTH * 2) - (Constants.PIPE_WIDTH / 2) , world, entities);
+                addPipesAtLocation((Constants.MAX_WIDTH * 3) - (Constants.PIPE_WIDTH / 2), world, entities);
 
             }
             hadTouches = true;
@@ -115,22 +116,25 @@ const Physics = (entities, {touches, time, dispatch}) => {
         }
     });
 
+    Matter.Engine.update(engine, time.delta);
+
     Object.keys(entities).forEach(key => {
         if (key.indexOf('pipe') === 0 && entities.hasOwnProperty(key)){
             Matter.Body.translate(entities[key].body, {x: -2, y: 0});
 
-            if (key.indexOf("Top") === -1 && parseInt(key.replace("pipe", "")) % 2 === 0){
-                let pipeIndex = parseInt(key.replace("pipe", ""));
-                if (entities[key].body.position.x < entities.bird.body.position.x && !entities[key].scored){
+            if (key.indexOf("Top") !== -1 && parseInt(key.replace("pipe", "")) % 2 === 0){
+                if (entities[key].body.position.x <= bird.position.x && !entities[key].scored){
                     entities[key].scored = true; 
                     dispatch({type: "score"})
                 }
                 if (entities[key].body.position.x <= -1 * (Constants.PIPE_WIDTH / 2)){
-                    addPipesAtLocation((Constants.MAX_WIDTH * 2) - (Constants.PIPE_WIDTH / 2), world, entities)
+                    let pipeIndex = parseInt(key.replace("pipe", ""));
                         delete(entities["pipe" + (pipeIndex - 1)]);
                         delete(entities["pipe" + (pipeIndex - 1) + "Top"]);
                         delete(entities["pipe" + (pipeIndex)]);
                         delete(entities["pipe" + (pipeIndex) + "Top"]);
+
+                        addPipesAtLocation((Constants.MAX_WIDTH * 2) - (Constants.PIPE_WIDTH / 2), world, entities);
                 }
             }     
         } else if (key.indexOf ("floor") === 0){
@@ -145,7 +149,14 @@ const Physics = (entities, {touches, time, dispatch}) => {
         }
     });
 
-    Matter.Engine.update(engine, time.delta);
+    tick += 1;
+    if (tick % 5 === 0){
+        pose = pose + 1;
+        if (pose > 3){
+            pose = 1;
+        }
+        entities.bird.pose = pose; 
+    } 
 
     return entities; 
     };
