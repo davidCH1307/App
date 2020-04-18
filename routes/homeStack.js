@@ -6,7 +6,7 @@ import Kanye_World from '../screens/Kanye_World';
 import Menu from '../screens/Menu';
 import NewScreen from '../screens/NewScreen';
 import Stay_On_Task from '../screens/Stay_On_Task';
-import Flappy_Bona from '../screens/Flappy_Bona';
+import Flappy_Bona from '../screens/Flappy_Bird';
 
 const screens = {
     Menu: {
