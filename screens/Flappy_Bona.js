@@ -99,6 +99,7 @@ export default class Flappy extends Component{
                         <View style = {styles.fulLScreen}>
                             <Text style = {styles.gameOverText}> Game Over </Text>
                             <Text style = {styles.gameOverSubText}> Try Again </Text>
+                            <Text style = {styles.scoreCounter}>{this.state.score}</Text>
                         </View>
                     </TouchableOpacity>}
             </ImageBackground>
