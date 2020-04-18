@@ -26,10 +26,10 @@ export default class Pipe extends Component {
                     flexDirection: 'column',
                 }}>
                 {Array.apply(null, Array(pipeIterations)).map(( el, idx) => {
-                    return <Image style = {{ width: width, height: height}} key = {idx} resizeMode = "stretch"
-                     source = {Images.pipe1} />
+                    return <Image style = {{ width: width, height: pipeHeight}} key = {idx}
+                     source = {Images.pipe1} resizeMode = "stretch" />
                 })}
                 </View>
-        )
+        );
     }
 }

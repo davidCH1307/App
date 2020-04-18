@@ -68,6 +68,10 @@ export default class Flappy extends Component{
         if (e.type === "game-over"){
             this.setState({
                 running: false
+            });
+        }else if (e.type === 'score'){
+            this.setState({
+                score: this.state.score + 1
             })
         }
     }

@@ -13,7 +13,7 @@ export default class PipeTop extends Component {
         return (
             <Image 
                 style = {{
-                    position: 'absolute',
+                    position: "relative" ,
                     top: y,
                     left: x,
                     width: width, 
