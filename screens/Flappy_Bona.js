@@ -5,13 +5,7 @@ import { GameEngine } from 'react-native-game-engine';
 import Matter from 'matter-js';
 import Bird from '../components/Bird';
 import Floor from '../components/Floor';
-import Physics from '../components/Physics';
-import Images from '../assets/Images';
-
-
-
-
-
+import Physics, { resetPipes } from '../components/Physics';
 
 export default class Flappy extends Component{
     constructor (props){
@@ -32,7 +26,8 @@ export default class Flappy extends Component{
         world.gravity.y = 0.0;
 
         let bird = Matter.Bodies.rectangle(Constants.MAX_WIDTH / 2, Constants.MAX_HEIGHT/ 2, Constants.BIRD_WIDTH,Constants.BRID_HEIGHT);
-            let floor1 = Matter.Bodies.rectangle(
+        
+        let floor1 = Matter.Bodies.rectangle(
                 Constants.MAX_WIDTH /2, 
                 Constants.MAX_HEIGHT - 110, 
                 Constants.MAX_WIDTH + 4, 
@@ -40,9 +35,9 @@ export default class Flappy extends Component{
                 { isStatic: true }
                 );
 
-            let floor2 = Matter.Bodies.rectangle(
+        let floor2 = Matter.Bodies.rectangle(
                 Constants.MAX_WIDTH + (Constants.MAX_WIDTH /2), 
-                Constants.MAX_HEIGHT -110, 
+                Constants.MAX_HEIGHT - 110, 
                 Constants.MAX_WIDTH + 4, 
                 50, 
                 { isStatic: true }
@@ -77,9 +72,11 @@ export default class Flappy extends Component{
     }
 
     reset = () => {
+        resetPipes();
         this.gameEngine.swap(this.setupWorld());
         this.setState({
-            running: true
+            running: true,
+            score: 0
         });
     }
 
@@ -96,10 +93,10 @@ export default class Flappy extends Component{
                     entities = {this.entities} >
                         <StatusBar hidden = {true} />
                     </GameEngine>
+                    <Text style = {styles.scoreCounter}>{this.state.score}</Text>
                     {!this.state.running &&
                     <TouchableOpacity onPress={this.reset} style={styles.fullScreenButton}>
                         <View style = {styles.fulLScreen}>
-                            <Text style = {styles.scoreCounter}>{this.state.score}</Text>
                             <Text style = {styles.gameOverText}> Game Over </Text>
                             <Text style = {styles.gameOverSubText}> Try Again </Text>
                         </View>
@@ -149,12 +146,12 @@ const styles = StyleSheet.create({
         fontSize: 24,
     },
     scoreCounter: {
+        position: 'absolute',
         color: 'white',
         fontSize: 72,
-        position: 'absolute',
         top: 50,
         left: Constants.MAX_WIDTH /2 - 24,
-        textShadowColor: '#222222',
+        textShadowColor: '#444444',
         textShadowOffset: {width: 2, height: 2},
         textShadowRadius: 2,
     },
