@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet,Text, View, Button, Image, ImageBackground} from 'react-native';
+import { StyleSheet,Text, View, Button, Image, ImageBackground, Dimensions} from 'react-native';
 import Player from "../components/Player";
 import Images from "../assets/Images";
 
@@ -63,11 +63,8 @@ export default class App extends React.Component{
        let image2= Images ["Rock"]
     return (
       <>
-      {/* <Text style={{ textAlign: "center" }}>Rock Paper Scissors</Text> */}
-        
-        
-        {/* <View style= {styles.Buttons}> */}
-          <ImageBackground source= {require('../assets/stadium.jpg')} style= {styles.Buttons}>
+      
+          <ImageBackground source= {require('../assets/stadium.jpg')} style= {styles.Background} style= {styles.Buttons} >
           <View style= {styles.playerOption}>
           
           <Player weapon={playerOne} />
@@ -125,18 +122,20 @@ export default class App extends React.Component{
 }
 const styles= StyleSheet.create({
   playerOption:{
-     overflow: "hidden",
+    
+    
     top: 0, bottom: 0, left: 0, right: 0, position: "absolute",
-    flexDirection: "column",  justifyContent: "space-evenly", marginBottom: -300
+    flexDirection: "column",  justifyContent: "space-evenly", alignItems: "center", margin: -100, 
+    marginBottom: -300
   },
   Tie:{
-    fontSize: 45, color: "white"
+    fontSize: 45, color: "white", textAlign:"center"
   },
   playOne:{
-    fontSize: 45, color: "white"
+    fontSize: 45, color: "white", textAlign:"center"
   },
   playTwo:{
-    fontSize: 45, color: "white"
+    fontSize: 45, color: "white", textAlign:"center"
   },
   Rock:{
     height: -100
@@ -148,8 +147,11 @@ const styles= StyleSheet.create({
     height: -100 
   },
   Buttons:{
-    alignItems: "center", justifyContent:"center", height: 680,  
+    alignItems: "stretch", justifyContent: "center", height: 810  
   },
+  Background:{
+    flex: 1
+  }
  
   
 
