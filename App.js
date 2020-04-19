@@ -1,42 +1,10 @@
 import React from 'react';
-import { StyleSheet,Text, View, Button } from 'react-native';
-import getQuote from './util/RandomQuoteApi';
+import Quarantine_Time from './screens/Kanye_World';
+import Navigator from './routes/homeStack';
 
-export default class App extends React.Component {
-  
-  constructor() {
-    super();
-      this.state = {
-        loading: true,
-        quoteMeta: {},
-    }
-  }
-
-
-  async componentDidMount() {
-    this.setState({
-    quoteMeta: await getQuote(),
-    })
-  }
-
-  
-  render() {
+export default function App(){
   return (
-    <View style={styles.container}>
-      <Text>MENU</Text>
-      <Button title="See Kanye's quote of the day." onPress={() => alert(this.state.quoteMeta.quote)}/>
-      <Button title = "About" onPress = {() => alert ("David, Matt, Nikolas, Justin ")}/>
-    </View>
+       <Navigator />
+
   );
-  }
-
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'beige',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
