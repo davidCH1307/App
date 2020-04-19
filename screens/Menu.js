@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet,Text, View, Button } from 'react-native';
+import { StyleSheet,Text, View, Button, ImageBackground} from 'react-native';
 
 export default function NEWSCREEN({ navigation }){
 
@@ -8,7 +8,7 @@ export default function NEWSCREEN({ navigation }){
     }
 
     const pressHandler2 = () => {
-        navigation.navigate('NewScreen');
+        navigation.navigate('Rock_Paper_Scissor');
     }
 
     const pressHandler3 = () => {
@@ -16,18 +16,18 @@ export default function NEWSCREEN({ navigation }){
     }
 
     const pressHandler4 = () => {
-        navigation.navigate('Flappy_Bird');
+        navigation.navigate('Flappy_Bona');
     }
 
     return (
-        <View style = {styles.container}>
+        <ImageBackground source = {require('../assets/blue.jpg')} style = {styles.container}>
             <Text style = {styles.writings}>Welcome to the Quarantine App</Text>
-            <Button title = 'Welcome to Kanye World ' onPress = {pressHandler}/>
             <Button title = 'Stay On Task' onPress = {pressHandler3}/>
-            <Button title = 'New Page ' onPress = {pressHandler2}/>
-            <Button title = 'Flappy Bird' onPress = {pressHandler4}/>
-            <Button title = "About" onPress = {() => alert ("This app was made by:                               David, Matt, Nikolas, Justin ")}/>
-        </View>
+            <Button title = 'Rock Paper Scissor ' onPress = {pressHandler2}/>
+            <Button title = 'Flappy Bona' onPress = {pressHandler4}/>
+            <Button title = 'Welcome to Kanye World ' onPress = {pressHandler}/>
+            <Button title = "About" onPress = {() => alert ("This app was made by:                               David, Matt, Nikolas")}/>
+        </ImageBackground>
     )
 }
 
@@ -35,11 +35,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 40,
-        backgroundColor: 'beige',
     },
     writings: {
         textAlign: 'center',
         fontSize: 20,
         fontWeight: 'bold',
+        color: 'skyblue',
     }
 });

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, FlatList, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Alert, TouchableWithoutFeedback, Keyboard, ImageBackground } from 'react-native';
 import TodoItem from '../components/TodoItem';
 import AddTodo from '../components/AddTodo';
 
@@ -37,7 +37,7 @@ export default function App() {
       Keyboard.dismiss();
       console.log('dismissed keyboard');
     }}>
-      <View style={styles.container}>
+      <ImageBackground source = {require('../assets/notes.png')} style={styles.container}>
         <View style = {styles.content}>
           <AddTodo submitHandler = {submitHandler} />
           <View style = {styles.list}>
@@ -49,7 +49,7 @@ export default function App() {
             />
           </View>
         </View>
-      </View>
+      </ImageBackground>
     </TouchableWithoutFeedback>
   );
 }
@@ -57,7 +57,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'beige',
+    padding: 10,
   },
   content:{
     flex: 1,

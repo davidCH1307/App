@@ -17,12 +17,12 @@ export default function TodoItem({ item, pressHandler }){
 
 const styles = StyleSheet.create ({
     item:{
-        padding: 16,
-        marginTop: 16, 
+        padding: 30,
+        marginTop: 35, 
         borderColor: '#bbb',
-        borderWidth: 1,
-        borderStyle: 'dashed',
-        borderRadius: 10,
+        //borderWidth: 1,
+        //borderStyle: 'dashed',
+        //borderRadius: 10,
         flexDirection: 'row',
     },
     itemtext: {
