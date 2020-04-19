@@ -6,4 +6,8 @@ export default Images = {
     pipeTop: require('./img/pipeTop.png'),
     floor: require('./img/floor.png'),
 
+    Paper: require ('./paper1.png'),
+    Scissors: require ('./scissors1.png'),
+    Rock: require ('./rock1.png')
+
 }

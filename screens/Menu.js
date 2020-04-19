@@ -8,7 +8,7 @@ export default function NEWSCREEN({ navigation }){
     }
 
     const pressHandler2 = () => {
-        navigation.navigate('NewScreen');
+        navigation.navigate('Rock_Paper_Scissor');
     }
 
     const pressHandler3 = () => {
@@ -23,7 +23,7 @@ export default function NEWSCREEN({ navigation }){
         <ImageBackground source = {require('../assets/blue.jpg')} style = {styles.container}>
             <Text style = {styles.writings}>Welcome to the Quarantine App</Text>
             <Button title = 'Stay On Task' onPress = {pressHandler3}/>
-            <Button title = 'New Page ' onPress = {pressHandler2}/>
+            <Button title = 'Rock Paper Scissor ' onPress = {pressHandler2}/>
             <Button title = 'Flappy Bona' onPress = {pressHandler4}/>
             <Button title = 'Welcome to Kanye World ' onPress = {pressHandler}/>
             <Button title = "About" onPress = {() => alert ("This app was made by:                               David, Matt, Nikolas")}/>
