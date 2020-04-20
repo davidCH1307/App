@@ -19,6 +19,10 @@ export default function NEWSCREEN({ navigation }){
         navigation.navigate('Flappy_Bona');
     }
 
+    const pressHandler5 = () => {
+        navigation.navigate('BlackJack');
+    }
+
     return (
         <ImageBackground source = {require('../assets/blue.jpg')} style = {styles.container}>
             <Text style = {styles.writings}>Welcome to the Quarantine App</Text>
@@ -26,6 +30,7 @@ export default function NEWSCREEN({ navigation }){
             <Button title = 'Rock Paper Scissor ' onPress = {pressHandler2}/>
             <Button title = 'Flappy Bona' onPress = {pressHandler4}/>
             <Button title = 'Welcome to Kanye World ' onPress = {pressHandler}/>
+            <Button title = 'BlackJack' onPress = {pressHandler5}/>
             <Button title = "About" onPress = {() => alert ("This app was made by:                               David, Matt, Nikolas")}/>
         </ImageBackground>
     )

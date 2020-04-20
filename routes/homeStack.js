@@ -7,6 +7,7 @@ import Menu from '../screens/Menu';
 import RPS from '../screens/RPS';
 import Stay_On_Task from '../screens/Stay_On_Task';
 import Flappy_Bona from '../screens/Flappy_Bird';
+import BlackJack from '../screens/BlackJack';
 
 const screens = {
     Menu: {
@@ -23,6 +24,9 @@ const screens = {
     },
     Kanye_World: {
         screen: Kanye_World
+    },
+    BlackJack: {
+        screen: BlackJack
     },
 }
 
