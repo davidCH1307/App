@@ -22,12 +22,16 @@ export default function NEWSCREEN({ navigation }){
     const pressHandler5 = () => {
         navigation.navigate('BlackJack');
     }
+    const pressHandler6 = () => {
+        navigation.navigate('Rock_Paper_Scissor_Lizard_Spock');
+    }
 
     return (
         <ImageBackground source = {require('../assets/blue.jpg')} style = {styles.container}>
             <Text style = {styles.writings}>Welcome to the Quarantine App</Text>
             <Button title = 'Stay On Task' onPress = {pressHandler3}/>
             <Button title = 'Rock Paper Scissor ' onPress = {pressHandler2}/>
+            <Button title = 'Rock Paper Scissor Lizard Spock ' onPress = {pressHandler6}/>
             <Button title = 'Flappy Bona' onPress = {pressHandler4}/>
             <Button title = 'Welcome to Kanye World ' onPress = {pressHandler}/>
             <Button title = 'BlackJack' onPress = {pressHandler5}/>

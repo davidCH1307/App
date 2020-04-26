@@ -5,7 +5,7 @@ import Images from "../assets/Images";
 
 
 
-const weapons = ["rock", "paper", "scissors"];
+const weapons = ["rock", "paper", "scissors", "lizard","spock"];
 export default class App extends React.Component{
   state = {
     playerOne: weapons[0],
@@ -42,7 +42,13 @@ export default class App extends React.Component{
     } else if (
       (playerOne === "rock" && playerTwo === "scissors") ||
       (playerOne === "scissors" && playerTwo === "paper") ||
-      (playerOne === "paper" && playerTwo === "rock") 
+      (playerOne === "paper" && playerTwo === "rock") ||
+      (playerOne === "lizard" && playerTwo==="paper") ||
+      (playerOne === "paper" && playerTwo==="spock") ||
+      (playerOne === "spock" && playerTwo==="rock") ||
+      (playerOne === "lizard" && playerTwo==="spock") ||
+      (playerOne === "spock" && playerTwo==="scissors") ||
+      (playerOne === "scissors" && playerTwo==="lizard")
     ) {
       return (<Text style={styles.playOne}>Player One Wins!</Text>);
     } else {
@@ -61,6 +67,8 @@ export default class App extends React.Component{
     let image= Images ["Paper"]
        let image1= Images ["Scissors"]
        let image2= Images ["Rock"]
+       let image3= Images ["Lizard"]
+       let image4= Images ["Spock"]
     return (
       <>
       
@@ -100,6 +108,28 @@ export default class App extends React.Component{
               {source= 'image1'}
               </Image>
           </Button>
+
+          <Button
+            className="weaponBtn"
+            onPress={() => this.selectWeapon("lizard")}
+            title="Lizard"
+          >
+           <Image  style= {styles.Lizard} >
+              {source= 'image3'}
+              </Image>
+          </Button>
+
+          <Button
+            className="weaponBtn"
+            onPress={() => this.selectWeapon("spock")}
+            title="Spock"
+          >
+           <Image  style= {styles.Spock} >
+              {source= 'image4'}
+              </Image>
+          </Button>
+
+
           <Button type="button" onPress={this.startGame}
         title="Start!">
           
@@ -144,6 +174,12 @@ const styles= StyleSheet.create({
     height: -100 
   },
   Scissors:{
+    height: -100 
+  },
+  Lizard:{
+    height: -100 
+  },
+  Spock:{
     height: -100 
   },
   Buttons:{
