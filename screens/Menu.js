@@ -23,7 +23,7 @@ export default function NEWSCREEN({ navigation }){
         navigation.navigate('BlackJack');
     }
     const pressHandler6 = () => {
-        navigation.navigate('Rock_Paper_Scissor_Lizard_Spock');
+        navigation.navigate('BigBangGame');
     }
 
     return (
