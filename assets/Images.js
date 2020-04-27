@@ -10,6 +10,6 @@ export default Images = {
     Scissors: require ('./scissors1.png'),
     Rock: require ('./rock1.png'),
     Lizard: require ('./lizard.png'),
-    Spock: require('./spock.jpg')
+    Spock: require('./spock.jpg'),
 
 };
