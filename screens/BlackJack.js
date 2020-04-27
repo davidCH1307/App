@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet,Text, View, Button } from 'react-native';
+import { StyleSheet,Text, View, Button, ImageBackground, Image, Row} from 'react-native';
 import getDeck from '../util/newDeck';
 import getTwoCards from '../util/drawTwoCards';
 
@@ -35,20 +35,37 @@ this.setState({
 
 render() {
 return (
- <View style={styles.container}>
+<ImageBackground source= {require('../assets/BlackJackBackground.jpg')} style= {styles.container}>
+ <View>
      <Text style = {styles.TitleText}>BlackJack</Text>
     <Button title="Start a new game" onPress={this.startGameDeck.bind(this)}/>
     <Text style={styles.QuoteText}>
     {/* {this.state.Deck.deck_id} */}
     Cards Remaining: {this.state.computerHand.remaining}
      </Text>
+
      <Text style={styles.QuoteText}>
     playerHand: {this.state.playerHand.value}
      </Text>
+     <Image style={styles.Pic}
+         source={{uri: this.state.playerHand.image1}}
+     />
+     <Image style={styles.Pic}
+         source={{uri: this.state.playerHand.image2}}
+     />
+
      <Text style={styles.QuoteText}>
     computerHand: {this.state.computerHand.value}
      </Text>
+     <Image style={styles.Pic}
+         source={{uri: this.state.computerHand.image1}}
+     />
+     <Image style={styles.Pic}
+         source={{uri: this.state.computerHand.image2}}
+     />
+
 </View>
+</ImageBackground>
 );
 }
 
@@ -57,18 +74,22 @@ return (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'beige',
-   // backgroundImage: 'url(http://wallpapercave.com/wp/cMFsvT9.png)',
-    //backgroundSize: 'cover'
   },
   TitleText:{
     textAlign: 'center',
     fontSize: 36,
+    color: "black"
   },
 
   QuoteText:{
     textAlign: 'center',
     fontSize: 20,
-    borderRadius: 20
-  }
+    borderRadius: 20,
+    color: "black"
+  },
+
+  Pic:{
+    height: 100,
+     width: 70,
+  },
 });
