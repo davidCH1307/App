@@ -99,6 +99,7 @@ export default class App extends React.Component{
               {source= 'image'}
               </Image>
           </Button>
+          
           <Button
             className="weaponBtn"
             onPress={() => this.selectWeapon("scissors")}
