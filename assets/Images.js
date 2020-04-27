@@ -8,6 +8,8 @@ export default Images = {
 
     Paper: require ('./paper1.png'),
     Scissors: require ('./scissors1.png'),
-    Rock: require ('./rock1.png')
+    Rock: require ('./rock1.png'),
+    Lizard: require ('./lizard.png'),
+    Spock: require('./spock.jpg')
 
-}
+};

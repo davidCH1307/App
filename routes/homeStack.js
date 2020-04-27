@@ -8,6 +8,7 @@ import RPS from '../screens/RPS';
 import Stay_On_Task from '../screens/Stay_On_Task';
 import Flappy_Bona from '../screens/Flappy_Bird';
 import BlackJack from '../screens/BlackJack';
+import BigBangGame from '../screens/BigBangGame';
 
 const screens = {
     Menu: {
@@ -18,6 +19,9 @@ const screens = {
     },
     Rock_Paper_Scissor: {
         screen: RPS
+    },
+    BigBangGame:{
+        screen: BigBangGame
     },
     Flappy_Bona: {
         screen: Flappy_Bona
