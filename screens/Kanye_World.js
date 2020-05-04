@@ -58,7 +58,7 @@ export default class Quarantine_Time extends React.Component{
       <Button title="Get a random quote from Kanye" onPress={this.handleClick.bind(this)}/>
       <Text></Text>
       <Text style={styles.QuoteText}>
-        {this.state.quoteMeta.quote}
+        "{this.state.quoteMeta.quote}"
       </Text>
       <Text></Text>
       <Text></Text>
