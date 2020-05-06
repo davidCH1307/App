@@ -14,13 +14,14 @@ const Player = ({ weapon }) => (
       <Image style={styles.RPSLS}
         className="player-image"
         source={
-          weapon === "rock" ? rock : weapon === "scissors" ? scissors : paper
+          weapon === "rock" ? rock : weapon === "scissors" ? scissors : weapon === "paper" ? paper :weapon === "lizard" ? lizard:
+          spock
         }
         alt="Rock Paper Scissors" 
          resizeMode ="contain" crop= "scale"
          width= {Dimensions.get("screen").width/1.5}
      height= {Dimensions.get("screen").height/4}
-     flexDirection= "verticle"
+     
           
       />
     </View>
@@ -29,7 +30,7 @@ const Player = ({ weapon }) => (
 const styles = StyleSheet.create({ 
   RPSLS:{
     alignItems:"center", justifyContent:"center" ,
-    top: 1, bottom: 1, left: 1, right: 1, flexDirection: "row", 
+    top: 1, bottom: 1, left: 1, right: 1, 
      marginTop: -200, position:"relative", 
   }
  })

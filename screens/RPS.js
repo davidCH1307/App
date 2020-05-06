@@ -125,7 +125,7 @@ const styles= StyleSheet.create({
     
     
     top: 0, bottom: 0, left: 0, right: 0, position: "absolute",
-    flexDirection: "column",  justifyContent: "space-evenly", alignItems: "center", margin: -100, 
+     justifyContent: "space-evenly", alignItems: "center", margin: -100, 
     marginBottom: -300
   },
   Tie:{
